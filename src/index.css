@@ -14,17 +14,14 @@ body {
  
 }
 .container__element {
-  position: relative;
   height: 700px;
 }
 .container__your-weather {
   background-color: #293133;
-  width: 475px;
+  width: 510px;
 }
 .container__main {
-  position: absolute;
-  left: 5%;
-  top: 16%;
+  padding: 70px 40px;
 }
 
 .weather {
@@ -91,12 +88,8 @@ h1 {
 	top:1px;
 }
 .container__weather-forecast {
-  position: absolute;
-  bottom: 0; 
-  left: 35%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
- 
 }
