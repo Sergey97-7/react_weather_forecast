@@ -15,7 +15,7 @@ body {
 }
 .container__element {
   position: relative;
-  height: 600px;
+  height: 700px;
 }
 .container__your-weather {
   background-color: #293133;
@@ -26,17 +26,18 @@ body {
   left: 5%;
   top: 16%;
 }
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 .container__search-weather {
   color: #ffffff;
   background: #F2C14E; 
   background: linear-gradient(to right, #F2C14E, #F78154); 
   border-left: 1px solid #0d0d0d;
   width: 550px;
-}
-.weather {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 h1 {
   font-size: 26px;
@@ -91,11 +92,11 @@ h1 {
 }
 .container__weather-forecast {
   position: absolute;
-  bottom: 2%; 
-  left: 0;
+  bottom: 0; 
+  left: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 550px;
-  height: 195px;
+  
+ 
 }
