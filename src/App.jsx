@@ -6,6 +6,7 @@ import Weather from './components/Weather';
 import TitleYourWeather from './components/TitleYourWeather';
 
 const API_KEY = '83217a0609c064c6634873d71e34850f';
+const heroku = 'https://cors-anywhere.herokuapp.com/';
 
 class App extends Component {
   state = {
@@ -29,13 +30,13 @@ class App extends Component {
     this.fetchIP();
   }
   fetchIP = (response) => {
-    fetch('http://api.ipstack.com/check?access_key=afce5a242eba13b5763884eb204d50fa')
+    fetch(`${heroku}//api.ipstack.com/check?access_key=afce5a242eba13b5763884eb204d50fa`)
       .then(response =>response.json())
       .then(({city, country_code}) => this.getYourWeather(city, country_code))
       .catch(error => console.error(error));
   }
   getYourWeather = (city, country) => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${API_KEY}`)
+    fetch(`${heroku}//api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${API_KEY}`)
       .then(response => response.json())
       .then(data => {
         this.setState({
@@ -55,7 +56,7 @@ class App extends Component {
     event.preventDefault();
     const city = event.target.elements.city.value;
     const country = event.target.elements.country.value;
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${API_KEY}`)
+    fetch(`${heroku}//api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&APPID=${API_KEY}`)
     .then (response => response.json())
     .then (data => {
       if (city && country && data.cod === "404") {
